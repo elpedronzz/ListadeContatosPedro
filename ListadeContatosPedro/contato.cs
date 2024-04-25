@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,21 +15,21 @@ namespace ListadeContatosPedro
 
         public string Nome
         {
-            get 
+            get
             {
-                return nome; 
-            } set 
-            { nome = value; 
-            } 
+                return nome;
+            } set
+            { nome = value;
+            }
         }
         public string Sobrenome
-        { 
-            get 
-            { 
-                return sobrenome; 
-            } set { 
-                sobrenome = value; 
-            } 
+        {
+            get
+            {
+                return sobrenome;
+            } set {
+                sobrenome = value;
+            }
         }
         public string Telefone
         {
@@ -51,9 +52,29 @@ namespace ListadeContatosPedro
 
         public contato()
         {
-            Nome = "Hideki"
-            Sobrenome = "Yang III"
-            Telefone = "(11) 91823-1831"
+            Nome = "Hideki";
+            Sobrenome = "Yang III";
+            Telefone = "(11) 91823-1831";
+        }
+
+        public contato(string nome, string sobrenome, string telefone)
+        {
+            Nome = nome;
+            Sobrenome = sobrenome;
+            Telefone = telefone;
+        }
+
+        public override string ToString()
+        {
+            string saida = string.Empty;
+            saida += String.Format("{0} {1}", Nome, Sobrenome);
+            saida += String.Format("({0}) {1}-{2}",
+                Telefone.Substring(0, 2),
+                Telefone.Substring(3, 5),
+                Telefone.Substring(7, 4));
+
+            return saida;
+
         }
     }
 }
