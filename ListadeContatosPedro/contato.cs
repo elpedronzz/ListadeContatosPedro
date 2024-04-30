@@ -39,13 +39,13 @@ namespace ListadeContatosPedro
             }
             set
             {
-                if (value.Length == 13)
+                if (value.Length == 11)
                 {
                     telefone = value;
                 }
                 else
                 {
-                    telefone = "(00) 00000-0000";
+                    telefone = "00000000000";
                 }
             }
         }
@@ -54,7 +54,7 @@ namespace ListadeContatosPedro
         {
             Nome = "Hideki";
             Sobrenome = "Yang III";
-            Telefone = "(11) 91823-1831";
+            Telefone = "11918231831";
         }
 
         public contato(string nome, string sobrenome, string telefone)
